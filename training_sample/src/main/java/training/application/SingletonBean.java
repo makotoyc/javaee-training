@@ -1,5 +1,6 @@
 package training.application;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 
@@ -7,7 +8,8 @@ import javax.ejb.Startup;
 @Startup
 public class SingletonBean {
 
-	public SingletonBean() {
-		System.out.println("Sinbleton コンストラクタ");
+	@PostConstruct
+	public void init() {
+		System.out.println("Sinbleton コンストラクタ後処理");
 	}
 }
