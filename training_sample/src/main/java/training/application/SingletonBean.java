@@ -8,8 +8,12 @@ import javax.ejb.Startup;
 @Startup
 public class SingletonBean {
 
+	public SingletonBean() {
+		System.out.println("#### SingletonBean: Construction Message: " + this.toString());
+	}
+
 	@PostConstruct
 	public void init() {
-		System.out.println("Sinbleton コンストラクタ後処理");
+		System.out.println("#### SingletonBean: PostConstruct Message: " + this.toString());
 	}
 }
