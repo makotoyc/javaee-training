@@ -2,20 +2,14 @@ package training.bean;
 
 import java.util.Date;
 
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
-import javax.validation.constraints.Size;
+import javax.faces.bean.RequestScoped;
 
 @ManagedBean
-@ApplicationScoped
+@RequestScoped
 public class Book {
 
-//	@NotNull
-//	@Size(max=13, min=10)
 	private String isbn = "none";
-//	@Null
 	private String title = "no title";
 	private Integer price = 0;
 	private Date publishedDate = new Date();

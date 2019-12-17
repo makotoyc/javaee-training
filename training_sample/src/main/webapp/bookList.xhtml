@@ -33,23 +33,6 @@
 			</h:column>
 		</h:dataTable>
 
-		<!-- 別解 -->
-		<table>
-			<tr>
-				<th width="150">タイトル</th>
-				<th width="200">料金</th>
-				<th width="200">発売日</th>
-			</tr>
-
-			<c:forEach var="book" items="#{bookListBean.books}">
-				<tr>
-					<td valign="top" width="150">#{book.title}</td>
-					<td valign="top" width="200">#{book.price}</td>
-					<td valign="top" width="200">#{book.publishedDate}</td>
-				</tr>
-			</c:forEach>
-		</table>
-
 	</f:view>
 </body>
 </html>
