@@ -9,46 +9,6 @@
 <title>Entry Result Page</title>
 </head>
 <body>
-	<f:view>
-		<span><h:outputText id="title"
-				value="#{bookEntryBean.book.title}" /></span>
-		<span> <h:outputText id="price"
-				value="#{bookEntryBean.book.price}">
-				<f:convertNumber type="currency" />
-			</h:outputText>
-		</span>
-		<span> <h:outputText id="publishedDate"
-				value="#{bookEntryBean.book.publishedDate}">
-				<f:convertDateTime pattern="yyyy/MM/dd" />
-			</h:outputText>
-		</span>
-
-		<h:dataTable var="row" value="#{bookEntryBean.books}">
-			<h:column>
-				<f:facet name="header">タイトル</f:facet>
-				<h:outputText value="#{row.title}" />
-			</h:column>
-			<h:column>
-				<f:facet name="header">価格</f:facet>
-				<h:outputText value="#{row.price}">
-					<f:convertNumber pattern="\#,###" />
-				</h:outputText>
-			</h:column>
-			<h:column>
-				<f:facet name="header">発行日</f:facet>
-				<h:outputText value="#{row.publishedDate}">
-					<f:convertDateTime pattern="yyyy/MM/dd" />
-				</h:outputText>
-			</h:column>
-		</h:dataTable>
-
-		<h:form>
-			<c:forEach var="book" items="#{bookEntryBean.books}">
-				<h:inputHidden value="#{book}"></h:inputHidden>
-			</c:forEach>
-			<h:link outcome="logout">戻る</h:link>
-			<h:commandLink action="#{bookEntryBean.back}">戻る</h:commandLink>
-		</h:form>
-	</f:view>
+	<h2>追加完了</h2>
 </body>
 </html>
