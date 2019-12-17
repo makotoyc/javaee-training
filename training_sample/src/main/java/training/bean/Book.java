@@ -8,11 +8,13 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import training.validation.ISBN;
+
 @ManagedBean
 @ApplicationScoped
 public class Book {
 
-	@NotNull
+	@ISBN
 	private String isbn = "none";
 
 	@NotNull
