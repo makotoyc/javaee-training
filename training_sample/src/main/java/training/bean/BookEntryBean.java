@@ -4,6 +4,8 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 
+import training.entity.Book;
+
 @ManagedBean
 @RequestScoped
 public class BookEntryBean {

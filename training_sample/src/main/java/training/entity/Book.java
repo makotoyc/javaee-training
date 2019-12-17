@@ -1,17 +1,13 @@
-package training.bean;
+package training.entity;
 
 import java.util.Date;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import training.validation.ISBN;
 
-@ManagedBean
-@ApplicationScoped
 public class Book {
 
 	@ISBN
