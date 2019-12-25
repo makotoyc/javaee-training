@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -14,6 +15,7 @@ import javax.validation.constraints.Size;
 import training.validation.ISBN;
 
 @Entity
+@NamedQuery(name = "Book.findAll", query = "SELECT b FROM Book b")
 public class Book {
 
 	@Id
@@ -34,15 +36,6 @@ public class Book {
 
 	@Column(name = "PUBLISHED_DATE")
 	private Date publishedDate = new Date();
-
-	public Book() {
-	}
-
-	public Book(String isbn, String title, Integer price) {
-		this.isbn = isbn;
-		this.title = title;
-		this.price = price;
-	}
 
 	public Long getId() {
 		return id;

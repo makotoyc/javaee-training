@@ -1,6 +1,5 @@
 package training.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -9,6 +8,7 @@ import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import training.entity.Book;
 import training.interceptor.BookInterceptor;
@@ -20,12 +20,9 @@ public class BookService {
 	EntityManager em;
 
 	@Interceptors(BookInterceptor.class)
-	public List<Book> findAll() {
-		// FIXME: 固定値を返却
-		List<Book> books = new ArrayList<>();
-		books.add(new Book("isbn1", "Effective Java", 3700));
-		books.add(new Book("isbn2", "Design Pattern", 2900));
-		return books;
+	public List<Book> findAll(){
+		TypedQuery<Book> query = em.createNamedQuery("Book.findAll", Book.class);
+		return query.getResultList();
 	}
 
 	public void insert(Book book) {
