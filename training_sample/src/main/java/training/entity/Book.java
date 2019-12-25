@@ -17,7 +17,7 @@ import training.validation.ISBN;
 public class Book {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 
 	@ISBN
@@ -42,6 +42,14 @@ public class Book {
 		this.isbn = isbn;
 		this.title = title;
 		this.price = price;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getIsbn() {
