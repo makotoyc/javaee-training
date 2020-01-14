@@ -12,6 +12,10 @@
 	<f:view>
 		<h:dataTable var="row" value="#{bookListBean.books}">
 			<h:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputText value="#{row.id}" />
+			</h:column>
+			<h:column>
 				<f:facet name="header">タイトル</f:facet>
 				<h:outputText value="#{row.title}" />
 			</h:column>
