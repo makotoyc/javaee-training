@@ -19,21 +19,32 @@ public class BookService {
 	@PersistenceContext(unitName="datasource")
 	EntityManager em;
 
-	@Interceptors(BookInterceptor.class)
-	public List<Book> findAll() {
-		// FIXME: 蝗ｺ螳壼�､繧定ｿ泌唆
-		TypedQuery<Book> query = em.createNamedQuery("Book.findAll", Book.class);
-		List<Book> books = query.getResultList();
-		return books;
-	}
-
-	public void insert(Book book) {
-		em.persist(book);
-	}
-
 	@PostConstruct
 	public void init() {
 		System.out.println("init螳溯｡�");
+	}
+
+	public void persist(Book book) {
+		em.persist(book);
+	}
+
+	@Interceptors(BookInterceptor.class)
+	public List<Book> findAll() {
+		TypedQuery<Book> query = em.createNamedQuery("Book.findAll", Book.class);
+		return query.getResultList();
+	}
+
+	public Book find(Long id) {
+		return em.find(Book.class, id);
+	}
+
+	public void update(Book book) {
+		em.merge(book);
+	}
+
+	public void remove(Book book) {
+		Book rBook = em.find(Book.class, book.getId());
+		em.remove(rBook);
 	}
 
 	@PreDestroy

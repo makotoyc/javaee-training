@@ -12,7 +12,7 @@ import training.service.BookService;
 @RequestScoped
 public class BookEntryBean {
 
-	// 登録用フィールド
+	// 逋ｻ骭ｲ逕ｨ繝輔ぅ繝ｼ繝ｫ繝�
 	private Book book;
 	@EJB
 	private BookService service;
@@ -23,7 +23,7 @@ public class BookEntryBean {
 	}
 
 	public String entry() {
-		this.service.insert(this.book);
+		this.service.persist(this.book);
 		return "bookEntryResult";
 	}
 

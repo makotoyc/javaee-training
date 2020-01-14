@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Book Entry Page</title>
+</head>
+<body>
+	<f:view>
+		<h:form>
+			<h:inputText id="find" value="#{bookModifyBean.book.id}" />
+			<h:commandButton action="#{bookModifyBean.find}" value="検索" />
+		</h:form>
+		<h:form>
+			<table>
+				<tr>
+					<td>ID:</td>
+					<td><h:inputText id="id"
+							value="#{bookModifyBean.book.id}" /></td>
+					<td><h:message for="title" /></td>
+				</tr>
+				<tr>
+					<td>タイトル:</td>
+					<td><h:inputText id="title"
+							value="#{bookModifyBean.book.title}" /></td>
+					<td><h:message for="title" /></td>
+				</tr>
+				<tr>
+					<td>価格：</td>
+					<td><h:inputText id="price"
+							value="#{bookModifyBean.book.price}" /></td>
+					<td><h:message for="price" /></td>
+				</tr>
+				<tr>
+					<td>ISBN：</td>
+					<td><h:inputText id="isbn" value="#{bookModifyBean.book.isbn}" /></td>
+					<td><h:message for="isbn" /></td>
+				</tr>
+				<tr>
+					<td>発行日：</td>
+					<td><h:inputText id="publishedDate"
+							value="#{bookModifyBean.book.publishedDate}">
+							<f:convertDateTime pattern="yyyy/MM/dd" />
+						</h:inputText></td>
+				</tr>
+				<tr>
+					<td><h:commandButton action="#{bookModifyBean.delete}"
+							value="削除" /></td>
+					<td><h:commandButton action="#{bookModifyBean.update}"
+							value="修正" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</f:view>
+</body>
+</html>
