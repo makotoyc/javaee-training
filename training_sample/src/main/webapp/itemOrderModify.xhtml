@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<f:view>
+		<h:form>
+			<h:inputText id="find" value="#{itemOrderModifyBean.id}" />
+			<h:commandButton action="#{itemOrderModifyBean.find}" value="検索" />
+		</h:form>
+
+		<h:form>
+			<h:inputText readonly="true" style="border:none;" id="order-id" value="#{itemOrderModifyBean.itemOrder.id}" />
+			<h:inputText value="#{itemOrderModifyBean.itemOrder.name}" />
+			<h:dataTable var="row"
+				value="#{itemOrderModifyBean.itemOrder.orderLines}">
+				<h:column>
+					<f:facet name="header">アイテム</f:facet>
+					<h:inputText value="#{row.id}" />
+					<span>:</span>
+					<h:inputText value="#{row.item}" />
+					<span>:</span>
+					<h:inputText value="#{row.unitPrice}" />
+				</h:column>
+			</h:dataTable>
+<!-- 
+			<h:outputText value="#{itemOrderModifyBean.itemOrder.id}" />
+			<h:dataTable var="row"
+				value="#{itemOrderModifyBean.itemOrder.orderLines}">
+				<h:column>
+					<f:facet name="header">アイテム</f:facet>
+					<h:outputText value="#{row.id}" />
+					<span>:</span>
+					<h:outputText value="#{row.item}" />
+					<span>:</span>
+					<h:outputText value="#{row.unitPrice}" />
+				</h:column>
+			</h:dataTable>
+ -->
+			<h:commandButton action="#{itemOrderModifyBean.syso}" value="syso" />
+			<h:commandButton action="#{itemOrderModifyBean.update}" value="修正" />
+			<h:commandButton action="#{itemOrderModifyBean.delete}" value="削除" />
+		</h:form>
+
+	</f:view>
+</body>
+</html>
