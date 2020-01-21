@@ -11,6 +11,24 @@ import org.junit.Test;
 public class ISBNValidatorTest {
 	ISBNValidator validator;
 	
+	@Before
+	public void setUp() {
+		System.out.println("@Before");
+		validator = new ISBNValidator();
+	}
+	@After
+	public void cleanUp() {
+		System.out.println("@After");		
+	}
+	@BeforeClass
+	public static void setUpClass() {
+		System.out.println("@BeforeClass");				
+	}
+	@AfterClass
+	public static void cleanUpClass() {
+		System.out.println("@AfterClass");				
+	}
+	
 	@Test
 	public void testIsValid_param_is_null_then_ret_false(){
 		String isbn = null ;
