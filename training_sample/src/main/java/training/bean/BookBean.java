@@ -15,6 +15,7 @@ public class BookBean {
 
 	public void exec() {
 		// day2-1-1
-		this.bookService.findAll().forEach(System.out::println);
+		this.bookService.findAll().stream()
+			.map(book -> book.getTitle()).forEach(System.out::println);
 	}
 }
