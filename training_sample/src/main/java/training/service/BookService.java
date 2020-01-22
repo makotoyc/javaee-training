@@ -6,12 +6,15 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 
 import training.entity.Book;
+import training.interceptor.BookInterceptor;
 
 @Stateless
 public class BookService {
 
+	@Interceptors(BookInterceptor.class)
 	public List<Book> findAll() {
 		// 固定値を返却
 		List<Book> books = new ArrayList<>();
