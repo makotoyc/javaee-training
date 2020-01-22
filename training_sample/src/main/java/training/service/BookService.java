@@ -19,9 +19,16 @@ public class BookService {
 	@PersistenceContext(unitName="datasource")
 	EntityManager em;
 
+<<<<<<< HEAD
 	@PostConstruct
 	public void init() {
 		System.out.println("init螳溯｡�");
+=======
+	@Interceptors(BookInterceptor.class)
+	public List<Book> findAll(){
+		TypedQuery<Book> query = em.createNamedQuery("Book.findAll", Book.class);
+		return query.getResultList();
+>>>>>>> refs/heads/day3-1-3
 	}
 
 	public void persist(Book book) {

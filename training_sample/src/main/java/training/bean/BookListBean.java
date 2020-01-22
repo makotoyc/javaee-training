@@ -16,9 +16,18 @@ public class BookListBean {
 
 	@EJB
 	private BookService service;
+<<<<<<< HEAD
+=======
+
+	private List<Book> books;
+>>>>>>> refs/heads/day3-1-3
 
 	@PostConstruct
 	public void init() {
+<<<<<<< HEAD
+=======
+		this.books = service.findAll();
+>>>>>>> refs/heads/day3-1-3
 	}
 
 	public List<Book> getBooks() {

@@ -15,7 +15,11 @@ import javax.validation.constraints.Size;
 import training.validation.ISBN;
 
 @Entity
+<<<<<<< HEAD
 @NamedQuery(name="Book.findAll", query="SELECT b FROM Book b")
+=======
+@NamedQuery(name = "Book.findAll", query = "SELECT b FROM Book b")
+>>>>>>> refs/heads/day3-1-3
 public class Book {
 
 	@Id
@@ -36,15 +40,6 @@ public class Book {
 
 	@Column(name = "PUBLISHED_DATE")
 	private Date publishedDate = new Date();
-
-	public Book() {
-	}
-
-	public Book(String isbn, String title, Integer price) {
-		this.isbn = isbn;
-		this.title = title;
-		this.price = price;
-	}
 
 	public Long getId() {
 		return id;
