@@ -3,9 +3,7 @@ package training.bean;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.interceptor.Interceptors;
 
-import training.interceptor.BookInterceptor;
 import training.service.BookService;
 
 @ManagedBean

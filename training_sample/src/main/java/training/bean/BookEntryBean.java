@@ -6,37 +6,43 @@ package training.bean;
 =======
 >>>>>>> refs/heads/day1-3-2
 import javax.annotation.PostConstruct;
+<<<<<<< HEAD
 >>>>>>> refs/heads/day1-3-1
+=======
+import javax.ejb.EJB;
+>>>>>>> refs/heads/day3-1-2
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 
 import training.entity.Book;
+import training.service.BookService;
 
 @ManagedBean
 @RequestScoped
 public class BookEntryBean {
 
-	// 登録用フィールド
+	// 逋ｻ骭ｲ逕ｨ繝輔ぅ繝ｼ繝ｫ繝�
 	private Book book;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> refs/heads/day1-3-2
 //	private List<Book> books;
+=======
+	@EJB
+	private BookService service;
+>>>>>>> refs/heads/day3-1-2
 
 	@PostConstruct
 	public void init() {
 		this.book = new Book();
-//		// booksの初期化
-//		// FIXME: データの取得は
-//		this.books = new ArrayList<>();
-//		this.books.add(new Book("isbn", "タイタニック", 900));
-//		this.books.add(new Book("isbn2", "フローズン", 1200));
 	}
 >>>>>>> refs/heads/day1-3-1
 
 	public String entry() {
+<<<<<<< HEAD
 		// FIXME データの登録は未修
 		System.out.println(this.book);
 <<<<<<< HEAD
@@ -47,6 +53,9 @@ public class BookEntryBean {
 =======
 //		this.books.add(this.book);
 >>>>>>> refs/heads/day1-3-2
+=======
+		this.service.persist(this.book);
+>>>>>>> refs/heads/day3-1-2
 		return "bookEntryResult";
 	}
 
@@ -57,6 +66,7 @@ public class BookEntryBean {
 	public void setBook(Book book) {
 		this.book = book;
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -71,4 +81,6 @@ public class BookEntryBean {
 >>>>>>> refs/heads/day1-3-1
 =======
 >>>>>>> refs/heads/day1-3-2
+=======
+>>>>>>> refs/heads/day3-1-2
 }
