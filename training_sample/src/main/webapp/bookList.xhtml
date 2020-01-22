@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<f:view>
+		<h:dataTable var="row" value="#{bookListBean.books}">
+			<h:column>
+				<f:facet name="header">タイトル</f:facet>
+				<h:outputText value="#{row.title}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">料金</f:facet>
+				<h:outputText value="#{row.price}">
+					<f:convertNumber pattern="\#,###" />
+				</h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">発売日</f:facet>
+				<h:outputText value="#{row.publishedDate}">
+					<f:convertDateTime pattern="yyyy/MM/dd" />
+				</h:outputText>
+			</h:column>
+		</h:dataTable>
+
+	</f:view>
+</body>
+</html>
