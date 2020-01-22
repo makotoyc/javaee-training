@@ -26,66 +26,8 @@
 	<p>
 		<h:outputText value="#{fooBean.message}" />
 	</p>
-	<div id="book-title">
-		<h:inputText id="title" value="#{book.title}" />
-		<h:commandButton value="書籍の作成" action="#{book.changeTitle}">
-			<f:ajax execute="title" render="book-title" />
-		</h:commandButton>
-	</div>
-
-	<table border="1" width="500" cellspacing="0" cellpadding="5"
-		bordercolor="#333333">
-		<tr>
-			<th bgcolor="#EE0000"><font color="#FFFFFF">ISBN</font></th>
-			<th bgcolor="#EE0000" width="150"><font color="#FFFFFF">タイトル</font></th>
-			<th bgcolor="#EE0000" width="200"><font color="#FFFFFF">金額</font></th>
-		</tr>
-
-		<c:forEach var="book" items="#{index.books}">
-			<tr>
-				<td bgcolor="#99CC00" align="right" nowrap="nowrap">#{book.isbn}</td>
-				<td bgcolor="#FFFFFF" valign="top" width="150">#{book.title}</td>
-				<td bgcolor="#FFFFFF" valign="top" width="200">#{book.price}</td>
-			</tr>
-		</c:forEach>
-	</table>
-
-	<h:dataTable var="row" value="#{index.books}">
-		<h:column>
-			<f:facet name="header">タイトル</f:facet>
-			<h:outputText value="#{row.title}" />
-		</h:column>
-		<h:column>
-			<f:facet name="header">価格</f:facet>
-			<h:outputText value="#{row.price}">
-				<f:convertNumber type="currency" />
-			</h:outputText>
-		</h:column>
-		<h:column>
-			<f:facet name="header">発行日</f:facet>
-			<h:outputText value="#{row.price}">
-				<f:convertDateTime pattern="yyyy/MM/dd" />
-			</h:outputText>
-		</h:column>
-	</h:dataTable>
-
-	<c:forEach var="book" items="#{index.books}">
-		<h:outputText value="#{book.isbn}" escape="false" />
-		<h:outputText value="#{book.title}" escape="false" />
-		<h:outputText value="#{book.price}" escape="false" />
-		<br />
-	</c:forEach>
-
-	<h2>HTTP ヘッダ</h2>
-	<c:forEach var="parameter" items="#{headerValues}">
-		<h:outputText value="#{parameter.key}" /> =
-    <c:forEach var="value" items="#{parameter.value}">
-			<h:outputText value="#{value}" escape="false" />
-			<br />
-		</c:forEach>
-	</c:forEach>
-
-	<h:link outcome="list" value="hoisa"></h:link>
-
+	<h:form>
+		<h:commandButton action="#{bookBean.exec}" value="出力" />
+	</h:form>
 </body>
 </html>
