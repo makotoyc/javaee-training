@@ -1,0 +1,2 @@
+ishii-training.git
+
