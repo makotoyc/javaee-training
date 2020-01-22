@@ -11,14 +11,20 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 >>>>>>> refs/heads/day1-3-1
 
+import training.validation.ISBN;
+
 @ManagedBean
 @RequestScoped
 public class Book {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	@NotNull
 >>>>>>> refs/heads/day1-3-1
+=======
+	@ISBN
+>>>>>>> refs/heads/day1-3-2
 	private String isbn = "none";
 <<<<<<< HEAD
 =======

@@ -1,7 +1,10 @@
 package training.bean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> refs/heads/day1-3-2
 import javax.annotation.PostConstruct;
 >>>>>>> refs/heads/day1-3-1
 import javax.enterprise.context.RequestScoped;
@@ -14,7 +17,10 @@ public class BookEntryBean {
 	// 登録用フィールド
 	private Book book;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> refs/heads/day1-3-2
 //	private List<Book> books;
 
 	@PostConstruct
@@ -32,9 +38,13 @@ public class BookEntryBean {
 		// FIXME データの登録は未修
 		System.out.println(this.book);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 //		this.books.add(this.book);
 >>>>>>> refs/heads/day1-3-1
+=======
+//		this.books.add(this.book);
+>>>>>>> refs/heads/day1-3-2
 		return "bookEntryResult";
 	}
 
@@ -55,5 +65,8 @@ public class BookEntryBean {
 //	public void setBooks(List<Book> books) {
 //		this.books = books;
 //	}
+<<<<<<< HEAD
 >>>>>>> refs/heads/day1-3-1
+=======
+>>>>>>> refs/heads/day1-3-2
 }
